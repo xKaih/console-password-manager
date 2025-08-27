@@ -5,7 +5,7 @@ fun printAccounts(accountHandler: AccountHandler): ConsoleHandler{
         ConsoleHandler.printWithColor("${id}. ", AnsiColor.CYAN)
             .printWithColor("[${accountData.name}] ", AnsiColor.RED)
             .printWithColor("${accountData.email} ", AnsiColor.RED)
-            .printlnWithColor("${accountData.cipherPassword} ", AnsiColor.BLUE)
+            .printlnWithColor("${accountData.accountPassword} ", AnsiColor.BLUE)
             .lineBreak()
     }
     return ConsoleHandler

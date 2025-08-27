@@ -46,14 +46,14 @@ class AccountHandler {
             AccountData(
                 it.value.name,
                 it.value.email,
-                EncryptionHandler.decrypt(it.value.cipherPassword, userPassword.toCharArray())
+                EncryptionHandler.decrypt(it.value.accountPassword, userPassword.toCharArray())
             )
         }
 
     }
 
     fun addAccount(accountData: AccountData) {
-        val cipherPassword = EncryptionHandler.encrypt(accountData.cipherPassword.toByteArray(),userPassword.toCharArray())
+        val cipherPassword = EncryptionHandler.encrypt(accountData.accountPassword.toByteArray(),userPassword.toCharArray())
         accounts[nextId++] = AccountData(accountData.name, accountData.email, cipherPassword)
     }
 
@@ -64,13 +64,13 @@ class AccountHandler {
     fun modifyAccount(uniqueId: Int, name: String? = null, email: String? = null, password: String? = null) {
         var cipherPassword = ""
         if (password != null) {
-            cipherPassword = EncryptionHandler.encrypt(password!!.toByteArray(), this.userPassword.toCharArray())
+            cipherPassword = EncryptionHandler.encrypt(password.toByteArray(), this.userPassword.toCharArray())
         }
 
         val account = getAccount(uniqueId)
         account?.name = name ?: account.name
         account?.email = email ?: account.email
-        account?.cipherPassword = (if (!cipherPassword.isEmpty()) cipherPassword else account!!.cipherPassword)
+        account?.accountPassword = (if (!cipherPassword.isEmpty()) cipherPassword else account.accountPassword)
     }
 
     fun saveChanges() {
