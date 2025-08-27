@@ -1,0 +1,15 @@
+{
+    "uniqueId": 3,
+    "accountData": {
+        "0": {
+            "name": "a",
+            "email": "a",
+            "cipherPassword": "3VjFc6uBf6Vx9sXNK/dCI/KCfhamajM/cPLI14KaLEAxcMJulAAIBPGRuTLZ"
+        },
+        "2": {
+            "name": "a",
+            "email": "a",
+            "cipherPassword": "7z4Js2Q1UVc7WMUQQEh/345czqXT5P0al5usB5A1h6lQy4Fz/gnTVrrZGQus"
+        }
+    }
+}
